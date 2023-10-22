@@ -3,40 +3,42 @@
 #include <filesystem>
 void help()
 {
-	std::cout << "peti <command>" << std::endl
-						<< std::endl
-						<< "Usage:" << std::endl
-						<< std::endl;
-	std::cout << "peti install\t"
-						<< "install all the dependencies in your project" << std::endl;
-	std::cout << "peti install <foo>\t"
-						<< "add the <foo> dependency to your project" << std::endl;
-	std::cout << "peti test\t"
-						<< "run this project's tests" << std::endl;
-	std::cout << "peti run <foo>\t"
-						<< "run the script named <foo>" << std::endl;
-	std::cout << "peti <command> -h\t"
-						<< "quick help on <command>" << std::endl;
-	std::cout << "peti -l\t"
-						<< "display usage info for all commands" << std::endl;
-	std::cout << "peti help <term>\t"
-						<< "search for help on <term> (in a browser)" << std::endl;
-	std::cout << "peti help peti\t"
-						<< "more involved overview (in a browser)" << std::endl;
-	return;
+	std::cout << std::endl
+              << "peti <command>" << std::endl
+              << std::endl
+              << "Usage:" << std::endl
+              << std::endl;
+    std::cout << "peti install\t\t"
+              << "install all the dependencies in your project" << std::endl;
+    std::cout << "peti install <foo>\t"
+              << "add the <foo> dependency to your project" << std::endl;
+    std::cout << "peti test\t\t"
+              << "run this project's tests" << std::endl;
+    std::cout << "peti run <foo>\t\t"
+              << "run the script named <foo>" << std::endl;
+    std::cout << "peti <command> -h\t"
+              << "quick help on <command>" << std::endl;
+    std::cout << "peti -l\t\t\t"
+              << "display usage info for all commands" << std::endl;
+    std::cout << "peti help <term>\t"
+              << "search for help on <term> (in a browser)" << std::endl;
+    std::cout << "peti help peti\t\t"
+              << "more involved overview (in a browser)" << std::endl
+              << std::endl;
 }
-void arguments(char const *argv[])
-{
 
-	return;
-}
 int main(int argc, char const *argv[])
 {
+	if (argc < 2 || (strcmpi(argv[1], "help") == 0))
+	{
+		help();
+	}
+	
 	if (argc > 2)
 	{
-		if (strcmp(argv[1],"new") == 0)
+		if (strcmpi(argv[1],"new") == 0)
 		{
-			if (strcmp(argv[2], "") != 0)
+			if (strcmpi(argv[2], "") != 0)
 			{
 				try
 				{
