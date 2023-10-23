@@ -1,28 +1,29 @@
 #include <cstring>
 #include <iostream>
 #include <filesystem>
+
 void help()
 {
 	std::cout << std::endl
-              << "peti <command>" << std::endl
+              << "bus <command>" << std::endl
               << std::endl
               << "Usage:" << std::endl
               << std::endl;
-    std::cout << "peti install\t\t"
+    std::cout << "bus install\t\t"
               << "install all the dependencies in your project" << std::endl;
-    std::cout << "peti install <foo>\t"
+    std::cout << "bus install <foo>\t"
               << "add the <foo> dependency to your project" << std::endl;
-    std::cout << "peti test\t\t"
+    std::cout << "bus test\t\t"
               << "run this project's tests" << std::endl;
-    std::cout << "peti run <foo>\t\t"
+    std::cout << "bus run <foo>\t\t"
               << "run the script named <foo>" << std::endl;
-    std::cout << "peti <command> -h\t"
+    std::cout << "bus <command> -h\t"
               << "quick help on <command>" << std::endl;
-    std::cout << "peti -l\t\t\t"
+    std::cout << "bus -l\t\t\t"
               << "display usage info for all commands" << std::endl;
-    std::cout << "peti help <term>\t"
+    std::cout << "bus help <term>\t"
               << "search for help on <term> (in a browser)" << std::endl;
-    std::cout << "peti help peti\t\t"
+    std::cout << "bus help bus\t\t"
               << "more involved overview (in a browser)" << std::endl
               << std::endl;
 }
