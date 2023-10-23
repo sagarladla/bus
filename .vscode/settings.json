@@ -49,6 +49,12 @@
         "sstream": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
-        "typeinfo": "cpp"
-    }
+        "typeinfo": "cpp",
+        "format": "cpp",
+        "filesystem": "cpp",
+        "charconv": "cpp",
+        "span": "cpp",
+        "variant": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }

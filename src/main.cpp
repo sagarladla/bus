@@ -1,3 +1,4 @@
+#include <format>
 #include <cstring>
 #include <iostream>
 #include <filesystem>
@@ -9,6 +10,8 @@ void help()
               << std::endl
               << "Usage:" << std::endl
               << std::endl;
+	std::cout << "bus new <foo>\t\t" 
+			  << "create a new project named <foo>" << std::endl;
     std::cout << "bus install\t\t"
               << "install all the dependencies in your project" << std::endl;
     std::cout << "bus install <foo>\t"
@@ -21,7 +24,7 @@ void help()
               << "quick help on <command>" << std::endl;
     std::cout << "bus -l\t\t\t"
               << "display usage info for all commands" << std::endl;
-    std::cout << "bus help <term>\t"
+    std::cout << "bus help <term>\t\t"
               << "search for help on <term> (in a browser)" << std::endl;
     std::cout << "bus help bus\t\t"
               << "more involved overview (in a browser)" << std::endl
@@ -30,7 +33,7 @@ void help()
 
 int main(int argc, char const *argv[])
 {
-	if (argc < 2 || (strcmpi(argv[1], "help") == 0))
+	if (argc < 2)
 	{
 		help();
 	}
@@ -44,19 +47,40 @@ int main(int argc, char const *argv[])
 				try
 				{
 					std::string root = argv[2];
-					std::string src = root.append("/src");
+					
+					// for build directory
+					std::string build = std::format("{}/build", root);
+					std::filesystem::create_directories(build);
+
+					// for header file include
+					std::string include = std::format("{}/include", root);
+					std::filesystem::create_directories(include);
+
+					// for libraries
+					std::string lib = std::format("{}/lib", root);
+					std::filesystem::create_directories(lib);
+					
+					// for source code
+					std::string src =  std::format("{}/src", root);
 					std::filesystem::create_directories(src);
-					root = argv[2];
-					std::string build = root.append("/build");
-					std::filesystem::create_directory(build);
+
 				}
 				catch (const std::exception &e)
 				{
-					std::cerr << e.what() << '\n';
+					std::cerr << e.what() << std::endl;
 				}
 			}
 		}
 		// arguments(argv);
+		else if (strcmpi(argv[1], "install") == 0)
+		{
+			if (strcmpi(argv[2], "") == 0)
+			{
+				/* read from libraries.toml */
+			}
+			
+		}
+		
 	}
 	return 0;
 }
