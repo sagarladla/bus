@@ -5,13 +5,13 @@
 
 void help()
 {
-	std::cout << std::endl
+    std::cout << std::endl
               << "bus <command>" << std::endl
               << std::endl
               << "Usage:" << std::endl
               << std::endl;
-	std::cout << "bus new <foo>\t\t" 
-			  << "create a new project named <foo>" << std::endl;
+    std::cout << "bus new <foo>\t\t" 
+	      << "create a new project named <foo>" << std::endl;
     std::cout << "bus install\t\t"
               << "install all the dependencies in your project" << std::endl;
     std::cout << "bus install <foo>\t"
