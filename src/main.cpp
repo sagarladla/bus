@@ -11,7 +11,7 @@ void help()
               << "Usage:" << std::endl
               << std::endl;
     std::cout << "bus new <foo>\t\t" 
-	      << "create a new project named <foo>" << std::endl;
+	      	  << "create a new project named <foo>" << std::endl;
     std::cout << "bus install\t\t"
               << "install all the dependencies in your project" << std::endl;
     std::cout << "bus install <foo>\t"
