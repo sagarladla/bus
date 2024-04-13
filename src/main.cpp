@@ -61,7 +61,7 @@ int main(int argc, char const *argv[])
 					std::filesystem::create_directories(lib);
 					
 					// for source code
-					std::string src =  std::format("{}/src", root);
+					std::string src = std::format("{}/src", root);
 					std::filesystem::create_directories(src);
 
 				}
